@@ -1,3 +1,5 @@
+Moba AI
+
 Moba AI is a Python portfolio project containing two AI-powered tools:
 
 - Moba Assistant — a terminal-based writing and text helper.
