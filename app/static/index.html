@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Moba AI — your intelligent AI assistant.">
+    <title>Moba AI | Chat</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <main class="app-shell">
+
+        <header class="topbar">
+            <a class="brand" href="/" aria-label="Moba AI home">
+                <img
+                    src="/static/Moba-AI-logo.png"
+                    alt="Moba AI logo"
+                    class="brand-logo"
+                >
+                <span>Moba<span class="brand-dot">.ai</span></span>
+            </a>
+
+            <button id="new-chat" class="new-chat" type="button">
+                New chat
+            </button>
+        </header>
+
+        <section class="chat-panel" aria-label="Chat with Moba">
+
+            <div class="welcome" id="welcome">
+
+                <img
+                    src="/static/Moba-AI-logo.png"
+                    alt="Moba AI logo"
+                    class="welcome-logo"
+                >
+
+                <p class="eyebrow">YOUR AI COMPANION</p>
+
+                <h1>What can I help you with?</h1>
+
+                <p class="welcome-copy">
+                    Ask a question, explore an idea,
+                    or get help with your work.
+                </p>
+
+                <div class="suggestions">
+                    <button type="button" class="suggestion">
+                        Explain APIs simply
+                    </button>
+
+                    <button type="button" class="suggestion">
+                        Help me write an email
+                    </button>
+
+                    <button type="button" class="suggestion">
+                        Give me a Python practice idea
+                    </button>
+                </div>
+
+            </div>
+
+            <div id="messages" class="messages" aria-live="polite"></div>
+
+            <form id="chat-form" class="composer">
+
+                <label class="sr-only" for="message-input">
+                    Message Moba
+                </label>
+
+                <textarea
+                    id="message-input"
+                    rows="1"
+                    maxlength="4000"
+                    placeholder="Message Moba..."
+                    required
+                ></textarea>
+
+                <button
+                    id="send-button"
+                    type="submit"
+                    aria-label="Send message"
+                >
+                    <span aria-hidden="true">↑</span>
+                </button>
+
+                <p class="composer-note">
+                    Moba can make mistakes. Check important information.
+                </p>
+
+            </form>
+
+        </section>
+    </main>
+
+    <script src="/static/app.js"></script>
+</body>
+</html>
