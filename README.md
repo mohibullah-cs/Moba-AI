@@ -7,28 +7,6 @@ Moba AI is a Python portfolio project containing two AI-powered tools:
 
 Both applications use the Groq API to generate AI-powered responses. The project is organized into small, reusable files for easy development, testing, and maintenance.
 
-Project Structure
-
-Moba-AI/
-├── app/
-│   ├── __init__.py
-│   ├── ai_service.py
-│   ├── main.py
-│   ├── schemas.py
-│   └── static/
-│       ├── index.html
-│       ├── style.css
-│       ├── app.js
-│       └── Moba-AI-logo.png
-├── tests/
-│   ├── __init__.py
-│   └── test_api.py
-├── moba_assistant.py
-├── .env.example
-├── .gitignore
-├── requirements.txt
-└── README.md
-
 Requirements
 
 - Python 3.10+
