@@ -3,7 +3,9 @@
 An AI-powered personal assistant built with Python, FastAPI and Groq.
 
 <p align="center">
-  <img src="Moba/Moba/app/static/Moba%20AI%20logo.png" width="150" alt="Moba AI Logo">
+  <img src="Moba/app/static/Moba-AI-logo.png"
+       alt="Moba AI Logo"
+       width="180">
 </p>
 
 ## Live Demo
