@@ -1,90 +1,106 @@
-# Moba AI
+Moba AI
 
-An AI-powered personal assistant built with Python, FastAPI and Groq.
+Moba AI is a Python portfolio project containing two AI-powered tools:
 
-<p align="center">
-  <img src="Moba/app/static/Moba-AI-logo.png"
-       alt="Moba AI Logo"
-       width="180">
-</p>
+- Moba Assistant — a terminal-based writing and text helper.
+- Moba AI Chatbot — a browser-based AI chatbot built with FastAPI.
 
-## Live Demo
+Both applications use the Groq API to generate AI-powered responses. The project is organized into small, reusable files for easy development, testing, and maintenance.
 
-[Try Moba AI](https://moba-ai.onrender.com)
+Requirements
 
-## Overview
+- Python 3.10+
+- Groq API key
+- Git (optional, for version control)
 
-Moba AI is a web-based AI assistant designed to provide conversational interactions through an intuitive interface.
+Setup (Windows / VS Code)
 
-## Features
+1. Clone or download the repository.
+2. Open the "Moba-AI" folder in Visual Studio Code.
+3. Open Terminal → New Terminal.
+4. Create and activate a virtual environment:
 
-- AI-powered conversations
-- FastAPI backend
-- Groq API integration
-- Responsive web interface
-- REST API architecture
+python -m venv venv
+venv\Scripts\activate
 
-## Technology Stack
+5. Install the required packages:
+
+python -m pip install -r requirements.txt
+
+6. Create your private environment file:
+
+copy .env.example .env
+
+7. Open ".env" and add your Groq API key:
+
+GROQ_API_KEY=your_groq_api_key_here
+GROQ_MODEL=your_groq_model_name
+
+Keep your actual API key private. Never upload your ".env" file to GitHub.
+
+Run Moba Assistant
+
+python moba_assistant.py
+
+Choose an option to improve writing, summarize text, explain a topic, or draft a message. Enter "0" to exit.
+
+Run Moba AI Chatbot
+
+uvicorn app.main:app --reload
+
+Open the following address in your browser:
+
+"http://127.0.0.1:8000"
+
+API documentation:
+
+"http://127.0.0.1:8000/docs"
+
+Run Tests
+
+python -m pytest
+
+Tests mock the AI service, so they do not require an API key or make actual API calls.
+
+API Endpoints
+
+Method| Endpoint| Description
+GET| "/"| Moba chatbot interface
+GET| "/health"| Health check
+POST| "/api/chat"| Send a message
+DELETE| "/api/chat/{conversation_id}"| Clear a conversation
+
+Example request body:
+
+{
+  "conversation_id": "my-session",
+  "message": "Explain Python functions in simple words."
+}
+
+Conversation History
+
+Moba keeps the latest messages in server memory, separately for each conversation ID. The history is cleared when the server restarts. This is a simple demonstration and does not use persistent database storage.
+
+Technologies Used
 
 - Python
 - FastAPI
-- JavaScript
+- Groq API
+- OpenAI Python SDK (Groq-compatible interface)
 - HTML
 - CSS
-- Groq API
+- JavaScript
+- Pytest
 
-## Project Structure
+Security and Important Notes
 
-```text
-Moba-AI/
-├── Moba/
-│   ├── app/
-│   │   ├── static/
-│   │   ├── main.py
-│   │   ├── ai_service.py
-│   │   └── schemas.py
-│   └── tests/
-├── .env.example
-├── .gitignore
-├── requirements.txt
-├── README.md
-└── moba_assistant.py
-```
+- Keep your ".env" file private.
+- Never publish your API keys or other secrets.
+- Groq API usage is subject to its current usage limits and pricing.
+- Do not send sensitive personal information to this demo application.
 
-## Installation
+Developer
 
-1. Clone the repository.
-
-```bash
-git clone https://github.com/mohibullah-cs/Moba-AI.git
-```
-
-2. Open the project folder.
-
-```bash
-cd Moba-AI
-```
-
-3. Install dependencies.
-
-```bash
-pip install -r requirements.txt
-```
-
-4. Configure your environment variables using `.env.example`.
-
-5. Run the application using the startup instructions in the project.
-
-## Environment Variables
-
-Configure your Groq API key in your local `.env` file.
-
-Never upload API keys or other secrets to GitHub.
-
-## Author
-
-**Mohib Ullah**
-
-Computer Science Student | Backend Developer | AI Application Developer
-
-[GitHub](https://github.com/mohibullah-cs)
+Mohib Ullah
+Computer Science Student
+Creator and Developer of Moba AI
